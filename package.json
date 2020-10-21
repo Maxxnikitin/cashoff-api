@@ -1,0 +1,30 @@
+{
+  "name": "cashoff-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxxnikitin/cashoff-api.git"
+  },
+  "keywords": [],
+  "author": "Maxx Nikitin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maxxnikitin/cashoff-api/issues"
+  },
+  "homepage": "https://github.com/Maxxnikitin/cashoff-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6"
+  }
+}
