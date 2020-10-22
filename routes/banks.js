@@ -2,7 +2,7 @@ const routerBanks = require('express').Router();
 const { getAllBanks, createNewBank, updateBank, } = require('../controllers/banks');
 const { celebrate, Joi } = require('celebrate');
 
-routerBanks.post('/', celebrate({
+routerBanks.post('/add', celebrate({
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
     bik: Joi.string().required().min(9).max(9),

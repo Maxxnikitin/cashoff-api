@@ -31,8 +31,8 @@ const updateBank = (req, res, next) => {
   const {
     name, bik, address, corrAccount,
   } = req.body;
-  User.findByIdAndUpdate(
-    { _id: req.bank._id },
+  Bank.findOneAndUpdate(
+    { bik },
     {
       name, bik, address, corrAccount
     },
@@ -42,7 +42,7 @@ const updateBank = (req, res, next) => {
       upsert: true
     }
   )
-    .then(user => res.send({ data: user }))
+    .then((bank) => res.send({ data: bank }))
     .catch(next);
 };
 
