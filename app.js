@@ -5,9 +5,12 @@ const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routerBanks = require('./routes/banks');
 const NotFoundError = require('./errors/not-found-err');
+const cors = require('cors');
 
 const { PORT = 4000 } = process.env;
 const app = express();
+
+app.use(cors());
 
 mongoose.connect('mongodb://localhost:27017/banksdb', {
   useNewUrlParser: true,
