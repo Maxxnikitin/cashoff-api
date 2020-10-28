@@ -17,6 +17,8 @@ const bankSchema = new mongoose.Schema({
   address: {
     type: String,
     required: true,
+    minlength: 2,
+    maxlength: 100,
   },
   corrAccount: {
     type: String,

@@ -6,7 +6,7 @@ const getAllBanks = (req, res, next) => {
   Bank.find({})
     .orFail(() => new NotFoundError('В базе нет ни одного банка'))
     .then((bank) => {
-      res.status(200).send({ data: bank });
+      res.status(200).send( bank );
     })
     .catch(next);
 };
@@ -22,7 +22,7 @@ const createNewBank = (req, res, next) => {
       if (!bank) {
         throw new NotValidDate('Переданы некорректные данные');
       }
-      res.status(200).send({ data: bank });
+      res.status(200).send( bank );
     })
     .catch(next);
 };
@@ -39,10 +39,10 @@ const updateBank = (req, res, next) => {
     {
       new: true,
       runValidators: true,
-      upsert: true
+      upsert: false
     }
   )
-    .then((bank) => res.send({ data: bank }))
+    .then((bank) => res.send( bank ))
     .catch(next);
 };
 
